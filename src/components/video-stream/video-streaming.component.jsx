@@ -11,7 +11,7 @@ import Hls from 'hls.js';
   
     componentDidMount(){
 
-        const streamURL = 'https://raw.githubusercontent.com/VictorTruong18/video-streaming-component/master/src/components/sample/sample.m3u8';
+        const streamURL = '../assets/sample1/sample.m3u8';
         const video = this.player;
         const hls = new Hls();
 
