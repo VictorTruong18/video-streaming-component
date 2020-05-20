@@ -3,9 +3,32 @@ import { Component } from "react";
 
 import Hls from "hls.js";
 
+
+
 class Player extends Component {
+
+
+	constructor(props){
+		super(props)
+
+		this.state = {
+			url : this.props.url,
+			widthChoice : this.props.widthChoice,
+			heightChoice : this.props.heightChoice,
+			autoPlay : this.props.autoPlay,
+			backgroundColor: this.props.backgroundColor
+
+
+		}
+		
+
+	}
+	
+
 	componentDidMount() {
-		const streamURL = "http://localhost:3000/assets/sample1/sample.m3u8";
+
+	
+		const streamURL = this.state.url;
 		const video = this.player;
 		const hls = new Hls();
 
@@ -20,9 +43,9 @@ class Player extends Component {
 
 	render() {
 		const style = {
-			width: 800,
-			height: 500,
-			background: "#000",
+			width: this.state.widthChoice,
+			height: this.state.heightChoice,
+			background: this.state.backgroundColor,
 		};
 
 		return (
@@ -31,7 +54,7 @@ class Player extends Component {
 					controls={true}
 					style={style}
 					ref={(player) => (this.player = player)}
-					autoPlay={true}
+					autoPlay={this.state.autoPlay}
 				>
 					{" "}
 				</video>

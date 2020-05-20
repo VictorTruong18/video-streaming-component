@@ -8,7 +8,13 @@ class App extends Component {
 		return (
 			<div className="App">
 				<h1>Hello</h1>
-				<Player />
+				<Player 
+					url = {'http://localhost:3000/assets/sample1/sample.m3u8'}
+					widthChoice = {800}
+					heightChoice = {500}
+					autoplay = {true}
+					backgroundColor = {'#000'}
+				/>
 			</div>
 		);
 	}
