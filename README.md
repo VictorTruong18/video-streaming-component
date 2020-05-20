@@ -1,36 +1,57 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Video Web Streaming React Component
 
-## Welcome
+React web component to stream video on any web page, using the hls.js library. You can simply add the 'video-streaming-component.jsx' file to your project and let it do the work for you !
 
-Clone this repository to get a Streaming WebComponent in React for streaming your own video on your own website.
+## Example :
 
-## Getting started
+![Video%20Web%20Streaming%20React%20Component%20b226c84953e341709bd59d1022243a08/Screen_Shot_2020-05-20_at_17.45.18.png](Video%20Web%20Streaming%20React%20Component%20b226c84953e341709bd59d1022243a08/Screen_Shot_2020-05-20_at_17.45.18.png)
 
-First things first you will need to install our node modules. We are using hls.js, TypeScript and React. Just simply type:
+## The Code :
 
-### `npm install`
+```jsx
+import React, { Component } from "react";
+import Player from "./components/video-stream/video-streaming.component.jsx";
 
-In the project directory, you can run:
+import "./App.css";
 
-### `npm start`
+class App extends Component {
+	render() {
+		return (
+			<div className="App">
+				<h1>Web Component Streaming React Demo</h1>
+				<Player 
+					url = {'http://localhost:3000/assets/sample1/sample.m3u8'}
+					widthChoice = {800}
+					heightChoice = {500}
+					autoplay = {true}
+					backgroundColor = {'#000'}
+				/>
+			</div>
+		);
+	}
+}
 
-To run the project  
-Full demo at : [WebComponent Streaming Demo](https://webcomponent-streaming-demo.herokuapp.com/)
+export default App;
+```
 
-## Put your own videos
+The code for the whole demonstration is on this repository. Feel free to only move the 'video-streaming-component.jsx' file to your files, run some installs, and then enjoy the magic !
 
-## Convert your video to .m3u8
+## How to use the url props ?
 
-...
+We access our video by putting them on the "public" folder for it to be reachable by an URL.
 
-All the magic happens in
+```jsx
+url = {'http://localhost:3000/assets/sample1/sample.m3u8'}
+```
 
-    src/components/video-streaming.component.jsx
+If you have already deployed your website replace localhost by the name of your domain.
 
-We access our video by putting them on the "public" folder so it will be available by an URL
+Disclaimer : the hls.js library only take .m3u8 files
 
-You will have to specify the path of the video you want to show on the const called streamURL on the componentDidMount:
+## Special thanks to :
 
-    const streamURL = "http://localhost:3000/assets/sample1/sample.m3u8";
+Dailymotion and Societe Generale
 
-If you have deployed your website replace localhost by the name of your domain.
+![Video%20Web%20Streaming%20React%20Component%20b226c84953e341709bd59d1022243a08/Logo_dailymotion.png](Video%20Web%20Streaming%20React%20Component%20b226c84953e341709bd59d1022243a08/Logo_dailymotion.png)
+
+![Video%20Web%20Streaming%20React%20Component%20b226c84953e341709bd59d1022243a08/logo-societe-generale.png](Video%20Web%20Streaming%20React%20Component%20b226c84953e341709bd59d1022243a08/logo-societe-generale.png)

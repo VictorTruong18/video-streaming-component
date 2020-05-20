@@ -7,7 +7,7 @@ class App extends Component {
 	render() {
 		return (
 			<div className="App">
-				<h1>Hello</h1>
+				<h1>Web Component Streaming React Demo</h1>
 				<Player 
 					url = {'http://localhost:3000/assets/sample1/sample.m3u8'}
 					widthChoice = {800}
